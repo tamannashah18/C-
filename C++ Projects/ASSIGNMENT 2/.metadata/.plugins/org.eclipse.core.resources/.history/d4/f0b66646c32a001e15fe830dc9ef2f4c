@@ -1,0 +1,12 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+    float no = 123.456789;
+    int n=1234
+    cout<<"Formatted no. (fixed-point): "<<fixed<<setprecision(2)<<no<<endl;
+    cout<<"Formatted no. (scientific): "<<scientific<<setprecision(1)<<no<<endl;
+    cout<<"Formatted no. (width and filled): "<<setw(20)<<setfill('*')<<no<<endl;
+    cout<<"Formatted no converted to binary"<<setbase(2)<<fixed<<n<<endl;
+    return 0;
+}

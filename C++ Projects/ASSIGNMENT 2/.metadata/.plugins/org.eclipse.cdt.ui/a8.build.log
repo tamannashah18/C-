@@ -1,0 +1,15 @@
+13:52:18 **** Incremental Build of configuration Debug for project a8 ****
+make all 
+Building file: ../a8.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"a8.d" -MT"a8.o" -o "a8.o" "../a8.cpp"
+Finished building: ../a8.cpp
+ 
+Building target: a8
+Invoking: GCC C++ Linker
+g++  -o "a8"  ./a8.o   
+Finished building target: a8
+ 
+
+13:52:19 Build Finished. 0 errors, 0 warnings. (took 1s.358ms)
+

@@ -1,0 +1,16 @@
+/*Develop a program for class student with properties: rollno, name,
+marks of
+3 subjects, total, percentage and grade. The behavior of student should
+include:
+a. Accept the input from the user.
+b. Display the data.
+c. Calculate the total marks obtained, percentage and grade of each
+student.
+d. Display the student who secured 1st rank.*/
+#include<iostream>
+using namespace std;
+class
+int main()
+{
+
+}

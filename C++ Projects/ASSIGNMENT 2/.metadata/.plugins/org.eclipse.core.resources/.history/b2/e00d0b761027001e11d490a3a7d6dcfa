@@ -1,0 +1,118 @@
+/*Develop a program for class student with properties: rollno, name,
+marks of
+3 subjects, total, percentage and grade. The behavior of student should
+include:
+a. Accept the input from the user.
+b. Display the data.
+c. Calculate the total marks obtained, percentage and grade of each
+student.
+d. Display the student who secured 1st rank.*/
+#include<iostream>
+using namespace std;
+class student{
+public:
+	int rno;
+	string name;
+	char grade;
+	float marks[3],per,total;
+	void input()
+	{
+		cout<<"Enter roll no";
+		cin>>rno;
+		cout<<"Enter name";
+		cin>>name;
+		for(int i=0;i<3;i++)
+		{
+			cout<<"Enter MARKS OF SUBJECT "<<i+1;
+			cin>>marks[i];
+			if(marks[i]<0&& marks[i]>100)
+			{
+				cout<<"Invalid marks- RENTER ALL MARKS\n";
+				continue;
+			}
+		}
+		totalmarks();
+	}
+	void totalmarks()
+	{
+		total=0;
+		for(int i=0;i<3;i++)
+		{
+			total+=marks[i];
+		}
+		per=total/3;
+		if(per>85)
+			grade='A';
+		else if(per>75)
+			grade='B';
+		else if(per>50)
+			grade='C';
+		else if(per>33)
+			grade='D';
+		else
+			grade='F';
+
+		}
+	void display()
+	{
+		cout<<"ROLL NO : "<<rno<<endl;
+		cout<<"NAME : "<<name<<endl;
+		for(int i=0;i<3;i++)
+		{
+			cout<<"MARKS OF SUBJECT "<<i+1<<" "<<marks[i]<<endl;
+		}
+		cout<<"TOTAL(OUT OF 300) : "<<total<<endl;
+		cout<<"PERCENTAGE(%) : "<<per<<endl;
+		cout<<"GRADE : "<<grade<<endl;
+
+	}
+	friend void rank();
+}s[10];
+void rank(int n)
+{
+	int index=0;
+	float rank=s[0].per;
+	for(int i=0;i<n;i++)
+	{
+		if(rank<s[i].per)
+		{
+			rank=s[i].per;
+			index=i;
+		}
+	}
+	s[index].display();
+}
+int main()
+{
+	int ch=0,n=0,i;
+	while(1)
+	{
+		cout<<"ENTER 1 to input data"<<endl;
+		cout<<"ENTER 2 to display data"<<endl;
+		cout<<"ENTER 3 to calculate total marks"<<endl;
+		cout<<"ENTER 4 to display student who got the first rank"<<endl;
+		cout<<"ENTER 5 to exit"<<endl;
+		cin>>ch;
+		switch(ch)
+		{
+		case 1:
+			s[n].input();
+			n++;
+			break;
+		case 2:
+			for(i=0;i<n;i++)
+				s[i].display();
+			break;
+		case 3:
+			for(i=0;i<n;i++)
+				s[i].totalmarks();
+			break;
+		case 4:
+			rank(n);
+			break;
+		case 5:
+			exit(0);
+			break;
+		}
+	}
+}

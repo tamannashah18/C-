@@ -1,0 +1,7 @@
+13:50:42 **** Incremental Build of configuration Default for project a2 ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+13:50:43 Build Finished. 0 errors, 0 warnings. (took 114ms)
+

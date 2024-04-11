@@ -1,0 +1,15 @@
+14:11:12 **** Build of configuration Debug for project a17 ****
+make all 
+Building file: ../a17.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"a17.d" -MT"a17.o" -o "a17.o" "../a17.cpp"
+Finished building: ../a17.cpp
+ 
+Building target: a17
+Invoking: GCC C++ Linker
+g++  -o "a17"  ./a17.o   
+Finished building target: a17
+ 
+14:11:17 **** Incremental Build of configuration Debug for project a17 ****
+make all 
+make: Nothing to be done for 'all'.

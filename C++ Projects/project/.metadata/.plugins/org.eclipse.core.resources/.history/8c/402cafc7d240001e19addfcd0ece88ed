@@ -1,0 +1,303 @@
+#include<iostream>
+using namespace std;
+int lap=0,tab=0,Ph=0,Pc=0;
+void count_device(int a)
+{
+	switch(a)
+	{
+	case 1:lap++;break;
+	case 2:tab++;break;
+	case 3:Ph++;break;
+	case 4:Pc++;break;
+	}
+}
+class LAPTOP;
+class PC;
+class TABLET;
+class PHONE;
+class config
+{
+public:
+	string brand,model,chip,os;
+	float scr,price;
+	void set()
+	{
+		cout<<"Enter Brand: ";
+		cin>>brand;
+		cout<<"Enter Model: ";
+		cin>>model;
+		cout<<"Enter Chip: ";
+		cin>>chip;
+		cout<<"Enter OS: ";
+		cin>>os;
+		cout<<"Enter Screen size: ";
+		cin>>scr;
+		cout<<"Enter Price: ";
+		cin>>price;
+	}
+	void get()
+	{
+		cout<<"Brand: "<<brand<<endl;
+		cout<<"Model: "<<model<<endl;
+		cout<<"Chip: "<<chip<<endl;
+		cout<<"OS: "<<os<<endl;
+		cout<<"Screen size: "<<scr<<endl;
+		cout<<"Price: "<<price<<endl;
+	}
+	void friend sortPC(PC &);
+}c;
+class LAPTOP:public config
+{
+	string colour[4]={"silver","blue","black","white"};
+	int col;
+public:
+	 void setL()
+	{
+		cout<<"ENTER COLOUR NO."<<endl;
+		for(int i=0;i<4;i++)
+			cout<<i<<" - "<<colour[i]<<"\t";
+		cin>>col;
+		if(col<0 || col>3)
+			cout<<"INVALID INPUT";
+		else
+		{
+			set();
+			count_device(1);
+		}
+	}
+	 void getL()
+	 {
+		 get();
+		 cout<<"Colour: "<<colour[col]<<endl;
+	 }
+}l[5];
+class TABLET:public config
+{
+	string colour[3]={"gray","black","white"};
+	int col;
+public:
+ void setT()
+{
+	cout<<"ENTER COLOUR NO."<<endl;
+	for(int i=0;i<3;i++)
+		cout<<i<<" - "<<colour[i]<<"\t";
+	cin>>col;
+	if(col<0 || col>2)
+		cout<<"INVALID INPUT";
+	else
+	{
+		set();
+		count_device(2);
+	}
+}
+ void getT()
+ {
+	 get();
+	 cout<<"Colour: "<<colour[col]<<endl;
+ }
+
+}t[5];
+class PHONE:public config
+{
+	string colour[4]={"silver","gray","black","white"};
+		int col;
+	public:
+		 void setPH()
+		{
+			cout<<"ENTER COLOUR NO."<<endl;
+			for(int i=0;i<4;i++)
+				cout<<i<<" - "<<colour[i]<<"\t";
+			cin>>col;
+			if(col<0 || col>3)
+				cout<<"INVALID INPUT";
+			else
+			{
+				set();
+				count_device(3);
+			}
+		}
+		 void getPH()
+		 {
+			 get();
+			 cout<<"Colour: "<<colour[col]<<endl;
+		 }
+
+}ph[5];
+class PC:public config
+{
+	string colour[2]={"silver","black"};
+	int col;
+public:
+ void setPC()
+{
+	cout<<"ENTER COLOUR NO."<<endl;
+	for(int i=0;i<2;i++)
+		cout<<i<<" - "<<colour[i]<<"\t";
+	cin>>col;
+	if(col<0 || col>1)
+		cout<<"INVALID INPUT";
+	else
+	{
+		set();
+		count_device(4);
+	}
+}
+ void getPC()
+ {
+	 get();
+	 cout<<"Colour: "<<colour[col]<<endl;
+ }
+}pc[5];
+void sortPC(PC pc[5])
+{
+	PC temp;
+	for(int i=0;i<Pc-1;i++)
+		for(int j=0;j<Pc-1-i;j++)
+		{
+			if(pc[j].price>pc[j+1].price)
+			{
+				temp=pc[j];
+				pc[j]=pc[j+1];
+				pc[j+1]=temp;
+			}
+		}
+
+	for(int i=0;i<Pc;i++)
+	{
+		cout<<"PC "<<i+1<<endl;
+		pc[i].getPC();
+	}
+}
+int main()
+{
+	int ch,i,device;
+	while(1)
+	{
+		cout<<"\nENTER 1 for INSERTING"<<endl;
+		cout<<"ENTER 2 for DISPLAY"<<endl;
+		cout<<"ENTER 3 for SORT"<<endl;
+		cout<<"ENTER 4 for SEARCH"<<endl;
+		cout<<"ENTER 5 for DELETE"<<endl;
+		cout<<"ENTER 6 for EXIT"<<endl;
+		cin>>ch;
+		switch(ch)
+		{
+			case 1:
+				cout<<"ENTER 1 for LAPTOP"<<endl;
+				cout<<"ENTER 2 for TABLET"<<endl;
+				cout<<"ENTER 3 for PHONE"<<endl;
+				cout<<"ENTER 4 for DESKTOP"<<endl;
+				cin>>device;
+				switch(device)
+				{
+					case 1:
+							l[lap].setL();
+						break;
+					case 2:
+							t[tab].setT();
+						break;
+					case 3:
+							ph[Ph].setPH();
+						break;
+					case 4:
+							pc[Pc].setPC();
+						break;
+					default:
+						cout<<"INVALID INPUT"<<endl;
+						break;
+				}
+				break;
+			case 2:
+				cout<<"ENTER 1 for LAPTOP"<<endl;
+				cout<<"ENTER 2 for TABLET"<<endl;
+				cout<<"ENTER 3 for PHONE"<<endl;
+				cout<<"ENTER 4 for DESKTOP"<<endl;
+				cout<<"ENTER 5 for ALL devices"<<endl;
+				cin>>device;
+				switch(device)
+				{
+					case 1:
+						for(i=0;i<lap;i++)
+						{
+							cout<<"LAPTOP "<<i+1<<endl;
+							l[i].getL();
+						}
+						break;
+					case 2:
+						for(i=0;i<tab;i++)
+						{
+							cout<<"TABLET "<<i+1<<endl;
+							t[i].getT();
+						}
+						break;
+					case 3:
+						for(i=0;i<Ph;i++)
+						{
+							cout<<"PHONE "<<i+1<<endl;
+							ph[i].getPH();
+						}
+						break;
+					case 4:
+						for(i=0;i<Pc;i++)
+						{
+							cout<<"PC "<<i+1<<endl;
+							pc[i].getPC();
+						}
+						break;
+					case 5:
+						cout<<"----LAPTOP----"<<endl;
+						cout<<"\n----------------------------------"<<endl;
+						for(i=0;i<lap;i++)
+						{
+							cout<<i+1<<endl;
+							l[i].getL();
+						}
+						cout<<"\n----------------------------------"<<endl;
+						cout<<"----TABLET----"<<endl;
+						cout<<"\n----------------------------------"<<endl;
+
+						for(i=0;i<tab;i++)
+						{
+							cout<<i+1<<endl;
+							t[i].getT();
+						}
+						cout<<"\n----------------------------------"<<endl;
+						cout<<"----PHONE----"<<endl;
+						cout<<"\n----------------------------------"<<endl;
+
+						for(i=0;i<Ph;i++)
+						{
+							cout<<i+1<<endl;
+							ph[i].getPH();
+						}
+						cout<<"\n----------------------------------"<<endl;
+						cout<<"----DESKTOP----"<<endl;
+						cout<<"\n----------------------------------"<<endl;
+						for(i=0;i<Pc;i++)
+						{
+							cout<<"PC "<<i+1<<endl;
+							pc[i].getPC();
+						}
+						cout<<"\n----------------------------------"<<endl;
+						break;
+					default:
+						cout<<"INVALID INPUT"<<endl;
+						break;
+				}
+				break;
+			case 3:
+				sortPC(pc);
+				break;
+//			case 4:
+//				break;
+//			case 5:
+//				break;
+			case 6:
+				exit(0);
+				break;
+		}
+	}
+	return 0;
+}
+
+

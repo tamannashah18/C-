@@ -1,0 +1,30 @@
+/*Develop a program for class student with properties: rollno, name,
+marks of
+3 subjects, total, percentage and grade. The behavior of student should
+include:
+a. Accept the input from the user.
+b. Display the data.
+c. Calculate the total marks obtained, percentage and grade of each
+student.
+d. Display the student who secured 1st rank.*/
+#include<iostream>
+using namespace std;
+class student{
+public:
+	int rno;
+	char grade;
+	float marks[3],per,total;
+};
+int main()
+{
+	int ch=0;
+	while(1)
+	{
+		cout<<"ENTER 1 to input data"<<endl;
+		cout<<"ENTER 2 to display data"<<endl;
+		cout<<"ENTER 3 to calculate total marks"<<endl;
+		cout<<"ENTER 4 to display student who got the first rank"<<endl;
+		cout<<"ENTER 5 to exit"<<endl;
+		cout<<
+	}
+}

@@ -1,0 +1,7 @@
+14:45:55 **** Incremental Build of configuration Debug for project a2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o a2.o ../a2.cpp 
+g++ -o a2 a2.o 
+
+14:45:55 Build Finished. 0 errors, 0 warnings. (took 589ms)
+

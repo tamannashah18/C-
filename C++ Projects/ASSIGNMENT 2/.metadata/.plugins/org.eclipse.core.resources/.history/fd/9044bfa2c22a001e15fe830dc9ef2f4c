@@ -1,0 +1,11 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+    float no = 123.456789;
+    cout<<"Formatted no. (fixed-point): "<<fixed<<setprecision(2)<<no<<endl;
+    cout<<setprecision(3);
+    cout<<"Formatted no. (scientific): "<<scientific<<no<<endl;
+    cout<<"Formatted no. (width and filled): "<<no<<setw(20)<<setfill('0')<<endl;
+    return 0;
+}

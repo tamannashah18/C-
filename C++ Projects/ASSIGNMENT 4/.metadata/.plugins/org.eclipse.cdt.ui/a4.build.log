@@ -1,0 +1,15 @@
+15:49:43 **** Incremental Build of configuration Debug for project a4 ****
+make all 
+Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" -o ".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
+Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+ 
+Building target: a4
+Invoking: GCC C++ Linker
+g++  -o "a4"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./a4.o   
+Finished building target: a4
+ 
+
+15:49:43 Build Finished. 0 errors, 0 warnings. (took 260ms)
+
